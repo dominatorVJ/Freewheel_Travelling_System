@@ -17,7 +17,7 @@ mongoose
 app.use(cors());
 app.use(express.json());
 app.get("/", (req, res) => {
-  res.send("Hello Sumit!");
+  res.send("Hello Vishal!");
 });
 
 app.use("/user", require("./userRouter"));
