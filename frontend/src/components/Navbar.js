@@ -3,7 +3,6 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import TicketContext from "./TicketContext";
 import logo from "./images/logo.png";
 import { FaCalculator, FaHistory, FaUserPlus } from "react-icons/fa";
-//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { TbArrowGuide } from "react-icons/tb";
 export const Navbar = () => {
   let navigate = useNavigate()
@@ -62,7 +61,7 @@ export const Navbar = () => {
                   </Link>
                 </b>
               </li>
-              <li>
+              <li className="nav-item">
                 <b>
                   <Link
                     onClick={Travelhistory}
