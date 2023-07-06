@@ -5,9 +5,11 @@ const port = 5000;
 app.listen(port);
 var cors = require("cors");
 const mongoose = require("mongoose");
-const { db_link } = require("./key");
+const {db_link} = require("./key")
 mongoose
-  .connect(db_link)
+  .connect(
+    db_link
+  )
   .then(function (db) {
     console.log("db conncected");
   })
