@@ -94,7 +94,6 @@ const BudgetCalculator = () => {
         <label>Additional Costs: </label>
         {additionalCosts.map((cost, index) => (
           <div key={index}>
-```jsx
             <input
               style={inputStyles}
               type="number"

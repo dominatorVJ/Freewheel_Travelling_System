@@ -25,6 +25,25 @@ export const Navbar = () => {
     }
 
   }
+  const handleSathi = (e) => {
+    e.preventDefault();
+    if (localStorage.getItem("token")) {
+      myTicket();
+      navigate("/travel-advisor");
+    } else {
+      navigate("/login");
+    }
+  };
+
+  const handleCalc = (e) => {
+    e.preventDefault();
+    if (localStorage.getItem("token")) {
+      myTicket();
+      navigate("/budget-calculator");
+    } else {
+      navigate("/login");
+    }
+  };
 
 
   let location = useLocation();
@@ -66,9 +85,10 @@ export const Navbar = () => {
                 </b>
               </li>
               <li className="nav-item">
-                <b
-                  onClick={()=>navigate('/travel-advisor')}>
+                <b>
+                  {/* onClick={()=>navigate('/travel-advisor')}> */}
                   <Link
+                    onClick={handleSathi}
                     className={`nav-link ${
                       location.pathname === "/travel-advisor" ? "active" : ""
                     } `}
@@ -92,16 +112,15 @@ export const Navbar = () => {
                 </b>
               </li>
               <li>
-                <b
-                onClick={()=>navigate('/budget-calculator')}>
+                <b>
                   <Link
+                    onClick={handleCalc}
                     className={`nav-link ${
                       location.pathname === "/budget-calculator" ? "active" : ""
                     } `}
                   >
                     Budget &nbsp;
                     <FaCalculator />
-                    
                   </Link>
                 </b>
               </li>
