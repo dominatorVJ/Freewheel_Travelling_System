@@ -13,9 +13,12 @@ import { Travelhistory } from "./components/Travelhistory";
 import { Flightsearch } from "./components/TravelBlogs/Flightsearch";
 import TicketState from "./components/TicketState";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-function App() {
+import TravelAdvisor from "./components/TravelAdvisor";
+import BudgetCalculator from "./components/BudgetCalculator";
 
+function App() {
   return (
+    
     <div>
       <TicketState>
         <Router>
@@ -28,6 +31,8 @@ function App() {
               <Route path="hotels" element={<HotelBlog />} />
             </Route>
             <Route exact path="/checkout" element={<Checkout />}></Route>
+            <Route exact path="/budget-calculator" element={<BudgetCalculator />}></Route>
+            <Route exact path="/travel-advisor" element={<TravelAdvisor />}></Route>
             <Route exact path="/login" element={<Login />}></Route>
             <Route exact path="/signup" element={<Signup />}></Route>
             <Route exact path="/forgotpassword" element={<Forgotpassword />}></Route>
@@ -39,7 +44,7 @@ function App() {
         <Footer />
       </TicketState>
     </div>
-  );
+  )
 }
 
 export default App;

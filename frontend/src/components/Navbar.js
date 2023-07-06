@@ -4,6 +4,7 @@ import TicketContext from "./TicketContext";
 import logo from "./images/logo.png";
 import { FaCalculator, FaHistory, FaUserPlus } from "react-icons/fa";
 import { TbArrowGuide } from "react-icons/tb";
+
 export const Navbar = () => {
   let navigate = useNavigate()
   const context = useContext(TicketContext)
@@ -12,6 +13,7 @@ export const Navbar = () => {
     localStorage.removeItem('token');
     navigate('/login')
   }
+
   const Travelhistory = (e) => {
     e.preventDefault()
     if (localStorage.getItem('token')) {
@@ -23,6 +25,8 @@ export const Navbar = () => {
     }
 
   }
+
+
   let location = useLocation();
   return (
     <div style={{ marginTop: "60px" }}>
@@ -62,11 +66,11 @@ export const Navbar = () => {
                 </b>
               </li>
               <li className="nav-item">
-                <b>
+                <b
+                  onClick={()=>navigate('/travel-advisor')}>
                   <Link
-                    onClick={Travelhistory}
                     className={`nav-link ${
-                      location.pathname === "/travelhistory" ? "active" : ""
+                      location.pathname === "/travel-advisor" ? "active" : ""
                     } `}
                   >
                     Sathi &nbsp;
@@ -88,15 +92,16 @@ export const Navbar = () => {
                 </b>
               </li>
               <li>
-                <b>
+                <b
+                onClick={()=>navigate('/budget-calculator')}>
                   <Link
-                    onClick={Travelhistory}
                     className={`nav-link ${
-                      location.pathname === "/travelhistory" ? "active" : ""
+                      location.pathname === "/budget-calculator" ? "active" : ""
                     } `}
                   >
                     Budget &nbsp;
                     <FaCalculator />
+                    
                   </Link>
                 </b>
               </li>
