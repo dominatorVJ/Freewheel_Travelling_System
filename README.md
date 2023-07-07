@@ -7,10 +7,6 @@
 solutions, features includes best travel options, stay options based on locations, community solution to find
 group mates and budget calculator to calculate overall travelling plans.
 
-• User can login/sign up using valid email id as it is integrated with nodemailer for real time OTP verification.
-
-• Leveraged HTML, CSS and ReactJs for the overall UI of the web app, utilized NodeJs, Express for the server side
-and MongoDB as the database to store user’s account information.
 
 `Take a look` :
 
