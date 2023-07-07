@@ -1,5 +1,7 @@
 const nodemailer = require("nodemailer");
 const { pass } = require("./key");
+
+
 module.exports.sendMail = async function sendMail(str, data) {
   let transporter = nodemailer.createTransport({
     service: "gmail",
@@ -7,8 +9,8 @@ module.exports.sendMail = async function sendMail(str, data) {
     port: 547,
     secure: false,
     auth: {
-      user: "kartik1vivo@gmail.com", // generated ethereal user
-      pass: pass, // generated ethereal password
+      user: "kartik1vivo@gmail.com", 
+      pass: pass, 
     },
   });
   var Osubject, Ohtml;
@@ -27,11 +29,11 @@ module.exports.sendMail = async function sendMail(str, data) {
     <br>
     ${data.resetpassword}`;
   }
-  // send mail with defined transport object
+  
   let info = await transporter.sendMail({
-    from: '"TravelSathi" <admin@gmail.com>', // sender address
-    to: data.email, // list of receivers
-    subject: Osubject, // Subject line
-    html: Ohtml, // html body
+    from: '"TravelSathi" <admin@gmail.com>', 
+    to: data.email, 
+    subject: Osubject, 
+    html: Ohtml, 
   });
 };
