@@ -17,7 +17,7 @@ export const Travelhistory = () => {
     }
     else {
         return (<div style={{ backgroundColor: "#f8fef8" }}>
-            <h1 className='d-flex justify-content-center'>Your travelhistory</h1><br></br>
+            <h1 className='d-flex justify-content-center'>Your Travel History</h1><br></br>
             <p className='text-center fs-5'>Items which you have visited as shown here</p><br></br>
             {Ticket.slice(0, 20).map((Object) => {
                 return <Thitems key={Object._id} Object={Object} />
