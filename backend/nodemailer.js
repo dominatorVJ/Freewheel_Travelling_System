@@ -3,8 +3,11 @@ const { pass } = require("./key");
 module.exports.sendMail = async function sendMail(str, data) {
   let transporter = nodemailer.createTransport({
     service: "gmail",
+    host: "smtp.gmail.com",
+    port: 547,
+    secure: false,
     auth: {
-      user: "admin@gmail.com", // generated ethereal user
+      user: "kartik1vivo@gmail.com", // generated ethereal user
       pass: pass, // generated ethereal password
     },
   });
