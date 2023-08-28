@@ -5,9 +5,6 @@ const moment = require("moment");
 const fetchuser = require("./fetchuser");
 const ticketModel = require("./Models/ticketModel");
 const { body, validationResult } = require("express-validator");
-const { trainAPI } = require("./key");
-const { hotelAPI } = require("./key");
-const { flightAPI } = require("./key");
 
 // ROUTE 1: Get All the tickets using: GET "/travelhistory". Login required
 router.get("/travelhistory", fetchuser, async (req, res) => {
@@ -54,7 +51,7 @@ router.post("/transport", fetchuser, async (req, res) => {
       axios
         .get("https://aviation-edge.com/v2/public/flightsFuture", {
           params: {
-            key: flightAPI,
+            key: FLIGHT_API,
             type: "arrival",
             iataCode: To,
             dep_iataCode: From,
@@ -83,7 +80,7 @@ router.post("/transport", fetchuser, async (req, res) => {
         url: "https://trains.p.rapidapi.com/",
         headers: {
           "content-type": "application/json",
-          "X-RapidAPI-Key": trainAPI,
+          "X-RapidAPI-Key": TRAIN_API,
           "X-RapidAPI-Host": "trains.p.rapidapi.com",
         },
         data: { search: From },
@@ -115,7 +112,7 @@ router.post("/hotel", fetchuser, async (req, res) => {
           zip_code: Zip,
         },
         headers: {
-          "X-RapidAPI-Key": hotelAPI,
+          "X-RapidAPI-Key": HOTEL_API,
           "X-RapidAPI-Host": "booking-com.p.rapidapi.com",
         },
       };

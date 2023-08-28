@@ -4,7 +4,8 @@
   "description": "This is the backend codebase of the Freewheel Travelling System-HostelDevta Project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start":"node index.js",
+    "dev":"nodemon index.js"
   },
   "author": "Vishal Jaiswal",
   "license": "ISC",
@@ -20,6 +21,7 @@
     "mongoose": "^7.3.1",
     "node-fetch": "^3.3.1",
     "nodemailer": "^6.9.3",
+     "dotenv": "^10.0.0",
     "nodemon": "^2.0.22"
   }
 }

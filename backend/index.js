@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const app = express();
 app.use(express.json());
@@ -5,10 +6,9 @@ const port = 5000;
 app.listen(port);
 var cors = require("cors");
 const mongoose = require("mongoose");
-const {db_link} = require("./key")
 mongoose
   .connect(
-    db_link
+    process.env.MONGO_URI
   )
   .then(function (db) {
     console.log("db conncected");

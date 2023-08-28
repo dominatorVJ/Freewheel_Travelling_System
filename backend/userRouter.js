@@ -3,7 +3,6 @@ const app = express();
 const jwt = require("jsonwebtoken");
 const { body, validationResult } = require("express-validator");
 const bcrypt = require("bcrypt");
-const { JWT_KEY } = require("./key");
 const userModel = require("./Models/userModel");
 const { sendMail } = require("./nodemailer");
 const fetchuser = require("./fetchuser");
@@ -89,7 +88,7 @@ Router.post(
           id: user.id,
         },
       };
-      const authtoken = jwt.sign(data, JWT_KEY);
+      const authtoken = jwt.sign(data, process.env.JWT_KEY);
       success = true;
       res.json({ success, authtoken });
     } catch (error) {

@@ -1,5 +1,4 @@
 const nodemailer = require("nodemailer");
-const { pass } = require("./key");
 
 
 module.exports.sendMail = async function sendMail(str, data) {
@@ -9,8 +8,8 @@ module.exports.sendMail = async function sendMail(str, data) {
     port: 547,
     secure: false,
     auth: {
-      user: "kartik1vivo@gmail.com", 
-      pass: pass, 
+      user: "kartik1vivo@gmail.com",
+      pass: process.env.FORGOTPASSKEY,
     },
   });
   var Osubject, Ohtml;
