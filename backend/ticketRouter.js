@@ -3,7 +3,7 @@ const router = express.Router();
 const axios = require("axios");
 const moment = require("moment");
 const fetchuser = require("./fetchuser");
-const ticketModel = require("./Models/ticketModel");
+const ticketModel = require("./models/ticketModel");
 const { body, validationResult } = require("express-validator");
 
 // ROUTE 1: Get All the tickets using: GET "/travelhistory". Login required

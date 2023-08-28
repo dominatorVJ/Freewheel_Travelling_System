@@ -34,16 +34,19 @@ export const Login = (props) => {
 
         setCrederrors(errors);
         if (Object.keys(errors).length === 0) {
-            const response = await fetch("http://localhost:5000/user/login", {
+            const response = await fetch(
+              "https://travel-sathi.onrender.com/user/login",
+              {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json",
+                  "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    email: credentials.email,
-                    password: credentials.password,
+                  email: credentials.email,
+                  password: credentials.password,
                 }),
-            });
+              }
+            );
             const json = await response.json();
             if (json.success) {
                 // Save the auth token and redirect
