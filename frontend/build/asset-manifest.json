@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.75212269.css",
+    "main.js": "/static/js/main.84dc7676.js",
+    "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
+    "static/media/hotel2.jpg": "/static/media/hotel2.79ef5dece057b1205da4.jpg",
+    "static/media/train.jpg": "/static/media/train.d090f8086dfad436fa69.jpg",
+    "static/media/hotel.jpg": "/static/media/hotel.3bc762a21aef22a86079.jpg",
+    "static/media/flight2.jpg": "/static/media/flight2.c68ca4e8333e1cce9000.jpg",
+    "static/media/choose.png": "/static/media/choose.791bb2eeeb323d45bffe.png",
+    "static/media/homebg.jpg": "/static/media/homebg.9f415aad5141cd8fae29.jpg",
+    "static/media/error.jpg": "/static/media/error.368dbc7deb663e447954.jpg",
+    "static/media/cheap.png": "/static/media/cheap.7bd5482cb0c93c5967a5.png",
+    "static/media/unavailable.jpg": "/static/media/unavailable.7e1ca706e69ab623fec6.jpg",
+    "static/media/trust.png": "/static/media/trust.e4ad872b663df76c50c7.png",
+    "static/media/flight.jpg": "/static/media/flight.7fbb240561b8bc4bb0f4.jpg",
+    "static/media/logoicon2.png": "/static/media/logoicon2.fd2249dacb2dba8ac34d.png",
+    "static/media/logo.png": "/static/media/logo.2012e7921f10e41dfcb5.png",
+    "static/media/logoicon.png": "/static/media/logoicon.2012e7921f10e41dfcb5.png",
+    "static/media/image1.png": "/static/media/image1.6d95ee64faa053db6374.png",
+    "static/media/revicons.eot": "/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/revicons.woff": "/static/media/revicons.e8746a624ed098489406.woff",
+    "index.html": "/index.html",
+    "main.75212269.css.map": "/static/css/main.75212269.css.map",
+    "main.84dc7676.js.map": "/static/js/main.84dc7676.js.map",
+    "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.75212269.css",
+    "static/js/main.84dc7676.js"
+  ]
+}
