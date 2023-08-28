@@ -1,7 +1,7 @@
 import TicketContext from "./TicketContext";
 import { useState } from "react";
 const TicketState = (props) => {
-    const host = "http://localhost:5000"
+    const host = "https://travel-sathi.onrender.com";
     const [Ticket, setTicket] = useState([])
     const [Data, setData] = useState("")
     // Get all Ticket

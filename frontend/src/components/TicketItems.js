@@ -4,18 +4,20 @@ export const TicketItems = (props) => {
     const { Object, Data } = props
     const book = async (e) => {
         e.preventDefault()
-        const response = await fetch("http://localhost:5000/ticket/saveticket", {
+        const response = await fetch(
+          "https://travel-sathi.onrender.com/ticket/saveticket",
+          {
             method: "POST",
             headers: {
-                "Content-Type": "application/json",
-                "authtoken": localStorage.getItem('token')
+              "Content-Type": "application/json",
+              authtoken: localStorage.getItem("token"),
             },
             body: JSON.stringify({
-
-                mode: Data,
-                name: Object.name
+              mode: Data,
+              name: Object.name,
             }),
-        });
+          }
+        );
         const json = await response.json();
         console.log(json.success)
         if (json.success) {

@@ -25,15 +25,18 @@ export const Forgotpassword = (props) => {
 
         setCrederrors(errors);
         if (Object.keys(errors).length === 0) {
-            const response = await fetch("http://localhost:5000/user/forgotpassword", {
+            const response = await fetch(
+              "https://travel-sathi.onrender.com/user/forgotpassword",
+              {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json",
+                  "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    email: credentials.email
+                  email: credentials.email,
                 }),
-            });
+              }
+            );
             const json = await response.json();
             if (json.success) {
                 setFlag(1)

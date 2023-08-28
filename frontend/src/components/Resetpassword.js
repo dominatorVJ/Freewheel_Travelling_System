@@ -33,16 +33,19 @@ export const Resetpassword = (props) => {
 
         setCrederrors(errors);
         if (Object.keys(errors).length === 0) {
-            const response = await fetch("http://localhost:5000/user/resetpassword", {
+            const response = await fetch(
+              "https://travel-sathi.onrender.com/user/resetpassword",
+              {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json",
+                  "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    password: credentials.password,
-                    resetToken: location.pathname.split('/')[2]
+                  password: credentials.password,
+                  resetToken: location.pathname.split("/")[2],
                 }),
-            });
+              }
+            );
             const json = await response.json();
             if (json.success) {
                 setFlag(1)
