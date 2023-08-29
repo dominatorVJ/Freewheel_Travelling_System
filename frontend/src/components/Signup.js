@@ -119,65 +119,132 @@ export const Signup = (props) => {
   return (
     <MDBContainer fluid>
       <MDBRow>
-
-        <MDBCol sm='5' style={{ backgroundColor: "#ffffff" }}>
-
-          <div className='d-flex flex-row ps-5 pt-5 mx-3'>
-            <img src={logo} style={{ width: '200px' }} alt="logo" />
+        <MDBCol sm="5" style={{ backgroundColor: "#ffffff" }}>
+          <div className="d-flex flex-row ps-5 pt-5 mx-3">
+            <img src={logo} style={{ width: "200px" }} alt="logo" />
           </div>
 
-          <div className='d-flex flex-column justify-content-center h-custom-2 w-75 pt-4'>
-
-            <h3 className="fw-bold mb-3 ps-5 pb-3 mx-3" style={{ letterSpacing: '1px' }}>SignUp</h3>
+          <div className="d-flex flex-column justify-content-center h-custom-2 w-75 pt-4">
+            <h3
+              className="fw-bold mb-3 ps-5 pb-3 mx-3"
+              style={{ letterSpacing: "1px" }}
+            >
+              SignUp
+            </h3>
             <form id="signupform" name="signupform" onSubmit={handleSubmit}>
-
-              <div className='container mb-4 mx-5' id="name">
-                <input type="text" className="w-100 fs-5 form-control" value={credentials.name} onChange={onChange} name="name" placeholder="Name" />
-                {crederrors.name && <p style={{ color: 'red' }}>{crederrors.name}</p>}
+              <div className="container mb-4 mx-5" id="name">
+                <input
+                  type="text"
+                  className="w-100 fs-5 form-control"
+                  value={credentials.name}
+                  onChange={onChange}
+                  name="name"
+                  placeholder="Name"
+                />
+                {crederrors.name && (
+                  <p style={{ color: "red" }}>{crederrors.name}</p>
+                )}
               </div>
 
-              <div className='input-group container mb-4 mx-5' id="email">
-                <input type="text" className="w-75 fs-5 form-control" value={credentials.email} onChange={onChange} name="email" placeholder="Email" />
-                <button onClick={onClick} className="btn w-25 btn-primary">Send OTP</button>
-                {crederrors.email && <p style={{ color: 'red' }}>{crederrors.email}</p>}
+              <div className="input-group container mb-4 mx-5" id="email">
+                <input
+                  type="text"
+                  className="w-75 fs-5 form-control"
+                  value={credentials.email}
+                  onChange={onChange}
+                  name="email"
+                  placeholder="Email"
+                />
+                <button onClick={onClick} className="btn w-25 btn-primary">
+                  Send OTP
+                </button>
+                {crederrors.email && (
+                  <p style={{ color: "red" }}>{crederrors.email}</p>
+                )}
               </div>
 
-              <div className='container mb-4 mx-5' id="otp">
-                <input type="number" className="w-100 fs-5 form-control" value={credentials.otp} onChange={onChange} name="otp" placeholder="OTP" maxLength="6" pattern="\d{6}" />
-                {crederrors.otp && <p style={{ color: 'red' }}>{crederrors.otp}</p>}
+              <div className="container mb-4 mx-5" id="otp">
+                <input
+                  type="number"
+                  className="w-100 fs-5 form-control"
+                  value={credentials.otp}
+                  onChange={onChange}
+                  name="otp"
+                  placeholder="OTP"
+                  maxLength="6"
+                  pattern="\d{6}"
+                />
+                {crederrors.otp && (
+                  <p style={{ color: "red" }}>{crederrors.otp}</p>
+                )}
               </div>
 
-              <div className='input-group container mb-4 mx-5'>
-                <input type={`${(show) ? "text" : "password"}`} className="w-75 fs-5 form-control" value={credentials.password} onChange={onChange} id="password" name="password" placeholder="Password" />
-                <span type='submit' className="input-group-text" onClick={func}><i className={`bi bi-eye${(show) ? "" : "-slash"}`}></i></span>
-                {crederrors.password && <p style={{ color: 'red' }}>{crederrors.password}</p>}
+              <div className="input-group container mb-4 mx-5">
+                <input
+                  type={`${show ? "text" : "password"}`}
+                  className="w-75 fs-5 form-control"
+                  value={credentials.password}
+                  onChange={onChange}
+                  id="password"
+                  name="password"
+                  placeholder="Password"
+                />
+                <span type="submit" className="input-group-text" onClick={func}>
+                  <i className={`bi bi-eye${show ? "" : "-slash"}`}></i>
+                </span>
+                {crederrors.password && (
+                  <p style={{ color: "red" }}>{crederrors.password}</p>
+                )}
               </div>
 
-              <div className='input-group container mb-4 mx-5'>
-                <input type={`${(show) ? "text" : "password"}`} className="w-75 fs-5 form-control" value={credentials.cpassword} onChange={onChange} id="cpassword" name="cpassword" placeholder="Confirm Password" />
-                <span type='submit' className="input-group-text" onClick={func}><i className={`bi bi-eye${(show) ? "" : "-slash"}`}></i></span>
-                {crederrors.cpassword && <p style={{ color: 'red' }}>{crederrors.cpassword}</p>}
-                {backendmessage && <p style={{ color: 'red' }}>{backendmessage}</p>}
+              <div className="input-group container mb-4 mx-5">
+                <input
+                  type={`${show ? "text" : "password"}`}
+                  className="w-75 fs-5 form-control"
+                  value={credentials.cpassword}
+                  onChange={onChange}
+                  id="cpassword"
+                  name="cpassword"
+                  placeholder="Confirm Password"
+                />
+                <span type="submit" className="input-group-text" onClick={func}>
+                  <i className={`bi bi-eye${show ? "" : "-slash"}`}></i>
+                </span>
+                {crederrors.cpassword && (
+                  <p style={{ color: "red" }}>{crederrors.cpassword}</p>
+                )}
+                {backendmessage && (
+                  <p style={{ color: "red" }}>{backendmessage}</p>
+                )}
               </div>
 
-              <div className='container mb-4 mx-5'>
-                <button type="submit" className="btn fs-5 w-100 btn-primary">Signup</button>
+              <div className="container mb-4 mx-5">
+                <button type="submit" className="btn fs-5 w-100 btn-primary">
+                  Signup
+                </button>
               </div>
-
             </form>
-            <p className='fw-normal' style={{ marginLeft: "60px" }}>Already have an account? <a href="/login" className="link-primary">Signin</a></p>
-
+            <p className="fw-normal" style={{ marginLeft: "60px" }}>
+              Already have an account?{" "}
+              <a
+                href="https://travel-sathi.onrender.com/user/login"
+                className="link-primary"
+              >
+                Signin
+              </a>
+            </p>
           </div>
-
         </MDBCol>
 
-        <MDBCol sm='7' className='d-none d-sm-block px-0'>
-          <img src={image1}
-            alt="poster" className="w-100" style={{ objectFit: 'cover', objectPosition: 'left' }} />
+        <MDBCol sm="7" className="d-none d-sm-block px-0">
+          <img
+            src={image1}
+            alt="poster"
+            className="w-100"
+            style={{ objectFit: "cover", objectPosition: "left" }}
+          />
         </MDBCol>
-
       </MDBRow>
-
     </MDBContainer>
   );
 }

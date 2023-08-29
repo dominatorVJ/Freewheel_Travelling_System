@@ -75,47 +75,91 @@ export const Login = (props) => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value });
     };
     return (
-        <MDBContainer fluid>
-            <MDBRow>
+      <MDBContainer fluid>
+        <MDBRow>
+          <MDBCol sm="5" style={{ backgroundColor: "#ffffff" }}>
+            <div className="d-flex flex-row ps-5 pt-5 mx-3">
+              <img src={logo} style={{ width: "200px" }} alt="logo" />
+            </div>
 
-                <MDBCol sm='5' style={{ backgroundColor: '#ffffff' }}>
+            <div className="d-flex flex-column justify-content-center h-custom-2 w-75 pt-4">
+              <h3
+                className="fw-bold mb-3 ps-5 pb-3 mx-3"
+                style={{ letterSpacing: "1px" }}
+              >
+                Sign In
+              </h3>
+              <form onSubmit={handleSubmit}>
+                <div className="container mb-4 mx-5">
+                  <input
+                    type="text"
+                    className="w-100 fs-5 form-control"
+                    value={credentials.email}
+                    onChange={onChange}
+                    id="email"
+                    name="email"
+                    placeholder="Email"
+                  />
+                  {crederrors.email && (
+                    <p style={{ color: "red" }}>{crederrors.email}</p>
+                  )}
+                </div>
+                <div className="input-group container mb-4 mx-5">
+                  <input
+                    type={`${show ? "text" : "password"}`}
+                    className="w-75 fs-5 form-control"
+                    value={credentials.password}
+                    onChange={onChange}
+                    id="password"
+                    name="password"
+                    placeholder="Password"
+                  />
+                  <span
+                    type="submit"
+                    className="input-group-text"
+                    onClick={func}
+                  >
+                    <i className={`bi bi-eye${show ? "" : "-slash"}`}></i>
+                  </span>
+                  {crederrors.password && (
+                    <p style={{ color: "red" }}>{crederrors.password}</p>
+                  )}
+                  {backendmessage && (
+                    <p style={{ color: "red" }}>{backendmessage}</p>
+                  )}
+                </div>
+                <div className="container mb-4 mx-5">
+                  <button type="submit" className="btn fs-5 w-100 btn-primary">
+                    Signin
+                  </button>
+                </div>
+              </form>
+              <p className="fw-normal mb-5" style={{ marginLeft: "60px" }}>
+                <a className="link-primary" href="/forgotpassword">
+                  Forgot password?
+                </a>
+              </p>
+              <p className="fw-normal" style={{ marginLeft: "60px" }}>
+                Don't have an account?{" "}
+                <a
+                  href="https://travel-sathi.onrender.com/user/signup"
+                  className="link-primary"
+                >
+                  Signup
+                </a>
+              </p>
+            </div>
+          </MDBCol>
 
-                    <div className='d-flex flex-row ps-5 pt-5 mx-3'>
-                        <img src={logo} style={{ width: '200px' }} alt="logo" />
-                    </div>
-
-                    <div className='d-flex flex-column justify-content-center h-custom-2 w-75 pt-4'>
-
-                        <h3 className="fw-bold mb-3 ps-5 pb-3 mx-3" style={{ letterSpacing: '1px' }}>Sign In</h3>
-                        <form onSubmit={handleSubmit}>
-                            <div className='container mb-4 mx-5'>
-                                <input type="text" className="w-100 fs-5 form-control" value={credentials.email} onChange={onChange} id="email" name="email" placeholder="Email" />
-                                {crederrors.email && <p style={{ color: 'red' }}>{crederrors.email}</p>}
-                            </div>
-                            <div className='input-group container mb-4 mx-5'>
-                                <input type={`${(show) ? "text" : "password"}`} className="w-75 fs-5 form-control" value={credentials.password} onChange={onChange} id="password" name="password" placeholder="Password" />
-                                <span type='submit' className="input-group-text" onClick={func}><i className={`bi bi-eye${(show) ? "" : "-slash"}`}></i></span>
-                                {crederrors.password && <p style={{ color: 'red' }}>{crederrors.password}</p>}
-                                {backendmessage && <p style={{ color: 'red' }}>{backendmessage}</p>}
-                            </div>
-                            <div className='container mb-4 mx-5'>
-                                <button type="submit" className="btn fs-5 w-100 btn-primary">Signin</button>
-                            </div>
-                        </form>
-                        <p className="fw-normal mb-5" style={{ marginLeft: "60px" }}><a className="link-primary" href="/forgotpassword">Forgot password?</a></p>
-                        <p className='fw-normal' style={{ marginLeft: "60px" }}>Don't have an account? <a href="/signup" className="link-primary">Signup</a></p>
-
-                    </div>
-
-                </MDBCol>
-
-                <MDBCol sm='7' className='d-none d-sm-block px-0'>
-                    <img src={image1}
-                        alt="poster" className="w-100" style={{ objectFit: 'cover', objectPosition: 'left' }} />
-                </MDBCol>
-
-            </MDBRow>
-
-        </MDBContainer>
+          <MDBCol sm="7" className="d-none d-sm-block px-0">
+            <img
+              src={image1}
+              alt="poster"
+              className="w-100"
+              style={{ objectFit: "cover", objectPosition: "left" }}
+            />
+          </MDBCol>
+        </MDBRow>
+      </MDBContainer>
     );
 }
